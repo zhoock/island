@@ -1,0 +1,79 @@
+// Content
+//
+//
+
+.b-news
+  margin-bottom: $base-line-height
+  +pie-clearfix
+
+  li
+    position: relative
+    padding: 18px 0 18px 70px
+
+    i
+      left: 0
+      top: 50%
+      content: ""
+      position: absolute
+      width: 62px
+      height: 62px
+      +transform(translate(0, -50%))
+      +breakpoint(1024)
+        width: 42px
+        height: 42px
+
+      +icon-news
+
+    a
+      display: inline-block
+      cursor: pointer
+
+.all-news
+  display: inline-block
+  padding: 6px 14px 5px
+  font-size: 2rem
+  text-transform: uppercase
+  border: 1px solid white
+  border-radius: $border-radius
+  cursor: pointer
+  background: rgba(124, 156, 156, .5)
+  +transition(all 0.25s linear 0s)
+
+  &:hover
+    background: rgba(124, 156, 156, 1)
+
+.b-map
+  margin-bottom: $base-line-height
+
+.b-partners
+  margin-bottom: $base-line-height
+
+  li
+    display: inline-block
+
+    .partner
+      width: 100%
+      height: 80px
+      display: inline-block
+      background-color: #ccc
+
+.b-leaders
+  margin-bottom: $base-line-height
+
+
+//  owl
+//
+//
+
+.owl-leaders, .owl-maps
+
+  .item
+    margin: 5px
+
+    img
+      display: block
+      width: 100%
+      height: auto
+
+
+

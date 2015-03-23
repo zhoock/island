@@ -1,0 +1,44 @@
+//
+// Buttons
+// --------------------------------------------------
+
+.btn
+  border: none
+  cursor: pointer
+  line-height: 1.2
+  border-radius: 6px
+  padding: 12px 20px
+  text-align: center
+  display: inline-block
+  text-transform: uppercase
+  margin-bottom: 14px
+  -webkit-font-smoothing: subpixel-antialiased
+  +transition(all 0.25s ease-out 0s)
+
+  &.btn--auto
+    width: auto
+
+  &.expand
+    padding-left: 0
+    padding-right: 0
+    width: 100%
+
+  // Alternate buttons
+  // --------------------------------------------------
+
+  &.btn__primary
+    +button-variant(white, $blue, mix($blue, white, 80%), darken($blue, 10%))
+
+  &.btn__danger
+    +button-variant(white, $error-color, mix($error-color, white, 80%), darken($error-color, 10%))
+
+  &.btn__default
+    +button-variant(white, $light-gray, mix($light-gray, white, 80%), darken($light-gray, 10%))
+
+  &.btn--dark
+    +button-variant(white, $dark-blue, mix($dark-blue, white, 80%), darken($dark-blue, 10%))
+
+  &.btn__login
+    +button-variant($base-text, linear-gradient(top, rgba(91,158,148,1) 0%,rgba(157,196,170,1) 100%), linear-gradient(top, rgba(157,196,170,1) 0%,rgba(91,158,148,1) 100%), #4b4e51)
+
+

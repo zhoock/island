@@ -1,0 +1,23 @@
+// Plane
+.b-plane
+  position: absolute
+  left: 0
+  top: 0
+  z-index: 3
+
+  &__ribbon
+    position: absolute
+    left: -360px
+    top: -75px
+
+    &__wrapper
+      width: 640px
+      +transform-style(preserve-3d)
+      +perspective(500px)
+      +transform(rotateX(30deg) rotateY(50deg) translateZ(20px) scale(.1))
+
+      &__content
+        width: -6310px
+        height: 144px
+        background-image: url(blocks/b-plane/plane-ribbon.png)
+        background-size: cover

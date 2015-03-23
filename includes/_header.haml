@@ -1,0 +1,65 @@
+/ header
+%header.b-header{role:"banner"}
+
+  / logo
+  %a.b-header__logo{ href:"/", title:"Логотип" }
+  / /logo
+
+  / yacht
+  .b-yacht.hide-for-small-only
+    .b-yacht__one
+      %div
+    .b-yacht__two
+      %div
+    .b-yacht__three
+      %div
+  / /yacht
+
+  .b-tree.hide-for-small-only
+
+  / clouds
+  .b-clouds
+    .b-clouds__one
+    .b-clouds__two
+    .b-clouds__three
+  // clouds
+
+  / smoke
+  .b-smoke.hide-for-small-only.js-smoke
+    - (1...10).each do |i|
+      %span
+  / / smoke
+
+  / nav
+  %nav.b-header__nav.hide-for-small-only{role:"navigation"}
+    %ul.b-header__nav__section.js-fittext-links
+      %li
+        %a.current{ href:"/", title:"О нас" } О нас
+      %li
+        %a{ href:"#", title:"Новости" } Новости
+      %li
+        %a{ href:"#", title:"Партнёры" } Партнёры
+      %li
+        %a{ href:"#", title:"Лидеры" } Лидеры
+      %li
+        %a{ href:"#", title:"Прибыль" } Прибыль
+      %li
+        %a{ href:"#", title:"Расход" } Расход
+      %li
+        %a{ href:"#", title:"Расход" } Советы
+  / /nav
+
+  / Video Guides
+  %a.b-plane.js-plane{ href:"#", title:"Видеогид" }
+    .b-plane__ribbon
+      .b-plane__ribbon__wrapper
+        .b-plane__ribbon__wrapper__content
+    .b-plane__body
+    .b-plane__propeller
+      %span
+    .b-plane__nose
+  / / Video Guides
+
+  %div.show-for-medium-up
+    = Haml::Engine.new(File.read('includes/_registration-form.haml')).render
+/ /header

@@ -1,0 +1,34 @@
+// Header
+//
+//
+
+.b-header
+  min-height: 240px
+  position: relative
+  margin-bottom: -50px
+  +header-background(bg, 24.8%)
+
+  +breakpoint(480)
+    background-position: 20% 20px
+
+  +breakpoint(768)
+    margin-bottom: 0
+
+  &__logo
+    +header-background(logo)
+    @extend %position
+
+    +breakpoint(480)
+      background-position: 20% 20px
+
+  .b-tree
+    +header-background(three-tree)
+    @extend %position
+
+
+// b-navigation
+@import ../b-navigation/style
+
+// b-menu-toogle
+@import ../b-menu-toggle/style
+

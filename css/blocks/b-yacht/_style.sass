@@ -1,0 +1,13 @@
+.b-yacht
+  @extend %position
+
+  &__one
+    +b-item(absolute, "yacht-one", 224px, 224px, 2%, auto, 80%, $type: yacht, $num: one, $yacht-bg: yacht-one-bg)
+    background-position: 0 66px
+
+  &__two
+    +b-item(absolute, "yacht-two", 256px, 209px, auto, 6%, 0, $type: yacht, $num: two, $yacht-bg: yacht-two-bg)
+    background-position: 60px 24px
+
+  &__three
+    +b-item(absolute, "yacht-three", 104px, 94px, auto, 2%, 40%, $type: yacht, $num: three)

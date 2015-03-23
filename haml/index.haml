@@ -1,0 +1,119 @@
+!!!
+%html{:lang => "ru"}
+  = Haml::Engine.new(File.read('includes/_head.haml')).render(parent, :title => "Остров")
+
+  %body
+    .b-menu-section.show-for-small-only
+      .b-menu-section__toggle.js-menu-section-toggle
+        .one
+        .two
+        .three
+
+    .b-menu-section__drop-down
+      %ul.b-menu-section__drop-down__nav
+        %li
+          %a.current{ href:"/", title:"О нас" } О нас
+        %li
+          %a{ href:"#", title:"Новости" } Новости
+        %li
+          %a{ href:"#", title:"Партнёры" } Партнёры
+        %li
+          %a{ href:"#", title:"Лидеры" } Лидеры
+        %li
+          %a{ href:"#", title:"Прибыль" } Прибыль
+        %li
+          %a{ href:"#", title:"Расход" } Расход
+        %li
+          %a{ href:"#", title:"Расход" } Советы
+
+    / container
+    .b-container
+      = Haml::Engine.new(File.read('includes/_header.haml')).render
+      .row
+
+
+        .small-11.small-centered.columns
+          .row
+            .small-12.medium-12.large-8.column
+
+              %div.show-for-small-only
+                = Haml::Engine.new(File.read('includes/_registration-form.haml')).render
+              %h2
+                Главная
+              %p
+                С&nbsp;каждым годом все больше людей играют в&nbsp;онлайн-игры! Все больше жителей планеты втягиваются в&nbsp;виртуальное пространство. Не&nbsp;только молодое поколение, но&nbsp;и&nbsp;люди в&nbsp;возрасте интересуются новыми проектами интернет-индустрии, и&nbsp;находят в&nbsp;них для себя много увлекательного и&nbsp;полезного. При этом, концепция возможности заработка в&nbsp;процессе игры быстро набирает популярность. Это не&nbsp;только интересно и&nbsp;просто, но&nbsp;также увлекательно и&nbsp;прибыльно. Мы&nbsp;решили подарить Вам такой проект! Так и&nbsp;появилась бизнес-игра &laquo;IslandPlay&raquo;, предлагающая возможность зарабатывать реальные деньги в&nbsp;интернете. Самое главное, что участниками игры являются реальные люди.
+              %p
+                На&nbsp;данный момент эта игра является новшеством на&nbsp;Российском рынке онлайн-проектов. По&nbsp;объективным причинам, большинство онлайн-игр с&nbsp;возможностью заработка игроком реальных денег и&nbsp;возможностью их&nbsp;последующего вывода из&nbsp;игры, относятся к&nbsp;жанру экономических симуляторов или экономических стратегий. Многие могут скептически относиться к&nbsp;таким проектам, но&nbsp;наш проект это простая доступная игра по&nbsp;принципу &laquo;морского боя&raquo;. Сама экономическая составляющая игры &laquo;IslandPlay&raquo; не&nbsp;похожа на&nbsp;другие бизнес-продукты. Здесь&nbsp;Вы, в&nbsp;буквальном смысле слова, без всяких преувеличений, можете зарабатывать реальные деньги, не&nbsp;тратя на&nbsp;это много времени и&nbsp;усилий. Просто проведя у&nbsp;компьютера несколько минут в&nbsp;день, Вы&nbsp;можете неплохо увеличить свой доход! Те, кто может позволить себе вложить в&nbsp;игру немного средств, начиная с&nbsp;одного доллара, в&nbsp;конечном итоге могут заработать во&nbsp;много раз больше. Наша игровая валюта это кредиты, равные по&nbsp;своей стоимости долларам. То-есть 1&nbsp;кредит = 1&nbsp;доллар.
+              %p
+                Что&nbsp;же такое &laquo;IslandPlay&raquo;? Смысл игры достаточно прост, напоминает принцип игры &laquo;морской бой&raquo;, только объектами игры являются прекрасные участки моря и&nbsp;суши на&nbsp;пяти разных островах, с&nbsp;разной ценовой категорией. Для Вашего удобства существует возможность использовать разделительную &laquo;сетку&raquo;, включив которую&nbsp;Вы можете разбить выбранный Вами остров для покупки участков на&nbsp;клетки, что сделает более удобным выбор совершенно любых участков в&nbsp;качестве своей игровой площадки.
+
+            .small-12.medium-12.large-4.column
+              %section.b-news
+                %h2
+                  Новости
+                %ul
+                  %li
+                    %i.icon-news-1
+                    %a{ href:"#" } Форум о первой игре с возможностью вывода заработка
+                  %li
+                    %i.icon-news-2
+                    %a{ href:"#" } Новые игровые карты от islandplay.net
+                  %li
+                    %i.icon-news-3
+                    %a{ href:"#" } В связи с резко увеличившимся в последнее время
+                  %li
+                    %i.icon-news-4
+                    %a{ href:"#" } С новым годом Вас уважаемые разносчики денег
+                  %li
+                    %i.icon-news-5
+                    %a{ href:"#" } С новым годом Вас уважаемые разносчики денег
+
+                  %a.all-news.right
+                    Все новости
+
+              -#%section.b-map
+              -#  .row
+              -#    .small-10.column.small-centered
+              -#      .owl-carousel.owl-maps.js-owl-maps
+              -#        - (1..4).each do |i|
+              -#          %div.item
+              -#            %img{ src:"css/blocks/b-content/map-1.jpg" }
+
+              %section.b-partners
+                %h2
+                  Партнёры
+                .row
+                  %ul
+                    - (1..12).each do |i|
+                      %li.small-4.medium-4.large-4.column
+                        %span.partner
+
+              %section.b-leaders
+                %h2
+                  Наши лидеры
+
+                .row
+                  .small-10.column.small-centered
+                    .owl-carousel.owl-leaders.js-owl-leaders
+                      - @leaders = ['icon-leader-1', 'icon-leader-2', 'icon-leader-3', 'icon-leader-1', 'icon-leader-2', 'icon-leader-3', 'icon-leader-1', 'icon-leader-2', 'icon-leader-3'];
+
+                      - @leaders.each do |leader|
+                        %div.item
+                          %img{ src:"css/blocks/b-content/#{leader}.png" }
+      .b-modal
+        .b-modal__overlay
+          .close
+            &#10006;
+          .b-modal__box
+            %h2
+              This is your modal content
+            %p
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac laoreet elit. Phasellus dignissim purus vitae urna cursus, quis congue ligula tristique.
+              Ut nec blandit risus.  Donec at orci ut justo venenatis viverra. Suspendisse in volutpat lacus. In enim est, dapibus eget ipsum sed, suscipit ultrices diam.
+
+      .b-container__footer
+    / /container
+
+    = Haml::Engine.new(File.read('includes/_footer.haml')).render
+
+    = Haml::Engine.new(File.read('includes/_scripts.haml')).render

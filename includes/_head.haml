@@ -1,0 +1,11 @@
+%head
+  %meta{:charset => "utf-8"}
+  %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}
+  %title= title
+  %meta{:content => "", :name => "description"}
+  %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}
+  %link{:href => "/favicon.ico", :rel => "shortcut icon", :type => "image/x-icon"}
+
+  - @links = ['style.css'];
+  - @links.each do |link|
+    %link{:href => "css/#{link}", :rel => "stylesheet"}

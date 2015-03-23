@@ -1,0 +1,44 @@
+// Modal
+//
+//
+
+.b-modal
+
+  &__overlay
+    background: black
+    bottom: 0
+    left: 0
+    position: fixed
+    right: 0
+    text-align: center
+    top: 0
+    z-index: -800
+    overflow: hidden
+    +opacity(0)
+    +scale(.5)
+    +transition(all .75s cubic-bezier(0.68, -0.55, 0.265, 1.55))
+
+    //open modal
+    &.open
+      z-index: 800
+      +opacity(1)
+      +scale(1)
+      +transition(all .70s cubic-bezier(0.68, -0.55, 0.265, 1.55))
+
+    .close
+      cursor: pointer
+      position: absolute
+      right: 1em
+      top: .5em
+      width: 30px
+      height: 30px
+      z-index: 1
+
+  &__box
+    padding: 1em .75em
+    position: relative
+    margin: 1em auto
+    max-width: 500px
+    width: 90%
+
+

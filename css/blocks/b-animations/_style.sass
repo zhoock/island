@@ -1,0 +1,257 @@
+// Logo
+//
+//
+.b-header__logo
+  +animation(splash 1s 0.2s forwards)
+
+  +keyframes(splash)
+    0%
+      +scale(.1)
+    50%
+      +scale(1.1)
+
+// Yacht
+//
+//
+
+.b-yacht
+  &__one
+    div
+      +transform-origin(25%, 25%)
+      +animation(ship1 2.5s infinite alternate ease-in-out)
+
+      +keyframes(ship1)
+        0%
+          +translate(0, 0)
+        100%
+          +transform(translate(8px, 2px) rotate(3deg))
+
+  &__two
+    div
+      +transform-origin(25%, 25%)
+      +animation(ship2 2.5s infinite alternate ease-in-out)
+
+      +keyframes(ship2)
+        0%
+          +translate(0, 0)
+        100%
+          +transform(translate(-8px, 2px) rotate(-3deg))
+
+  &__three
+    div
+      +animation(ship3 6s infinite ease-in-out)
+
+      +keyframes(ship3)
+        0%
+          +transform-origin(70%, 70%)
+          +transition(ease-out)
+
+        20%
+          +transform(translate(-2px, -4px) rotate(-4deg))
+
+        50%
+          +transform(translate(-1px, 0px) rotate(2deg))
+          +transform-origin(30%, 100%)
+
+        70%
+          +transform(translate(3px, 5px) rotate(-3deg))
+
+        80%
+          +transform(translate(5px, 0px) rotate(1deg))
+          +transform-origin(90%, 80%)
+
+        90%
+          +transform(translate(-4px, 3px) rotate(3deg))
+
+        100%
+          +transform(translate(0, 0))
+          +transform-origin(30%, 90%)
+          +transition(ease-in)
+
+// Smoke
+//
+//
+.b-smoke__left
+  +header-background(smoke-one)
+  position: absolute
+  left: 0
+  top: 0
+  width: 20px
+  height: 10px
+  +animation(smokeL 10s)
+  +opacity(0)
+
+  +keyframes(smokeL)
+    0%
+      +transform(scale(.2))
+    10%
+      +opacity(1)
+      +transform(translate(0, -5px) scale(.2))
+    100%
+      +transform(translate(-20px, -130px) scale(13))
+
+.b-smoke__right
+  +header-background(smoke-two)
+  position: absolute
+  left: 59%
+  top: 10%
+  width: 20px
+  height: 23px
+  +animation(smokeR 10s)
+  +opacity(0)
+
+  +keyframes(smokeR)
+    0%
+      +transform(scale(.2))
+    10%
+      +opacity(1)
+      +transform(translate(0, -5px) scale(.2))
+    100%
+      +transform(translate(20px, -130px) scale(13))
+
+// Clouds
+//
+//
+.b-clouds
+  @extend %position
+
+  &__one
+    +b-item(absolute, "cloud-one", 316px, 350px, -35%, auto, 0, $type: "cloud")
+    +animation(clouds-one 80s infinite alternate ease-in-out)
+
+  +keyframes(clouds-one)
+    0%
+      +opacity(.7)
+    50%
+      +opacity(.8)
+    100%
+      +translate(1000px, -100%)
+      +opacity(1)
+
+  &__two
+    +b-item(absolute, "cloud-two", 362px, 313px, 0, auto, 100px, $type: "cloud")
+    +animation(clouds-two 60s infinite alternate ease-in-out)
+
+  +keyframes(clouds-two)
+    0%
+      +opacity(0)
+    5%
+      +opacity(.7)
+    100%
+      +translate(1000px, -100%)
+      +opacity(1)
+
+  &__three
+    +b-item(absolute, "cloud-three", 312px, 279px, auto, 0, 12%, $type: "cloud")
+    +animation(clouds-three 50s infinite alternate ease-in-out)
+
+  +keyframes(clouds-three)
+    0%
+      +opacity(0)
+    5%
+      +opacity(.7)
+    100%
+      +translate(-1000px, 100%)
+      +opacity(1)
+
+// Board
+//
+//
+.b-header__nav
+  +animation(board 5s infinite alternate ease-in-out)
+  +transform-origin(50%, 0)
+
++keyframes(board)
+  0%
+    +skew(0, 0)
+  40%
+    +skew(-4deg, 0)
+  70%
+    +skew(-1.5deg, 0)
+  100%
+    +skew(-4deg, 0)
+
+// Plane
+//
+//
+.b-plane
+  +animation(plane-move 18s cubic-bezier(.19, .05, .78, 0) infinite)
+
+  +keyframes(plane-move)
+    0%
+      +transform(translate(-100px, 0) scale(0))
+    100%
+      +transform(translate(2000px, 700px) scale(12))
+
+  &:hover
+    +animation-play-state(paused)
+
+    .b-plane__ribbon,
+    .b-plane__body,
+    .b-plane__propeller,
+    .b-plane__nose
+      +animation-play-state(paused)
+
+  .b-plane__ribbon,
+  .b-plane__body,
+  .b-plane__propeller,
+  .b-plane__nose
+    +animation(plane-top 18s cubic-bezier(.19, .05, .78, 0) infinite)
+
+    +keyframes(plane-top)
+      80%
+        +translateY(0)
+      100%
+        +translateY(-100px)
+
+  %plane
+    width: 60px
+    height: 42px
+    background-size: contain
+
+  &__body
+    background-image: url(blocks/b-header/header-plane.png)
+    @extend %plane
+
+  &__nose
+    background-image: url(blocks/b-header/header-plane-nose.png)
+    position: absolute
+    left: 0
+    top: 0
+    @extend %plane
+
+  &__propeller
+    position: absolute
+    top: 20px
+    right: 13px
+    width: 15px
+    height: 15px
+    +transform-style(preserve-3d)
+    +perspective(500px)
+    +perspective-origin(0% 100%)
+    +transform(rotateX(-30deg) rotateY(50deg))
+    +transform-origin(50%, 50%)
+
+    span
+      position: absolute
+      left: 0
+      top: 0
+      width: 15px
+      height: 15px
+      background: url(blocks/b-header/propeller.png) no-repeat
+      background-size: contain
+      display: block
+      +animation(propeller 90ms linear infinite)
+
+      +keyframes(propeller)
+        100%
+          +rotate(360deg)
+
+.b-plane__ribbon__wrapper__content
+  +animation(play .8s steps(10) infinite)
+
+  +keyframes(play)
+    from
+      background-position: 0px
+    to
+      background-position: -6310px

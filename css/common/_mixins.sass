@@ -1,0 +1,119 @@
+// Buttons
+//
+//
+
+=button-variant($color, $background-img, $hover-background, $border-bg, $background: inherit, $disabled-background: $light-gray)
+  color: $color
+  background-color: $background
+  border: 1px solid $border-bg
+  +background-image($background-img)
+
+  &:hover,
+  &:focus,
+  &:active
+    color: $color
+    background-color: $hover-background
+    border-color: $hover-background
+    border-bottom: 1px solid $border-bg
+    +background-image($hover-background)
+
+  &.disabled,
+  &[disabled]
+    &:hover,
+    &:focus,
+    &:active
+      background-color: $disabled-background
+
+// Clouds & Boats
+//
+//
+
+=b-item($position, $bg, $width, $height, $left: auto, $right: auto, $top: auto, $bottom: auto, $type: "yacht", $num: "one", $yacht-bg: none)
+  position: $position
+  left: $left
+  top: $top
+  bottom: $bottom
+  right: $right
+  width: $width
+  height: $height
+  overflow: hidden
+
+  @if $type == "yacht"
+    background: url("blocks/b-header/" + $yacht-bg + ".png") no-repeat
+  @else if $type == "cloud"
+    background: url("blocks/b-header/" + $bg + ".png") no-repeat
+
+  div
+    background: url("blocks/b-header/" + $bg + ".png") no-repeat
+    width: $width + 10px
+    height: $height + 10px
+
+    @if $num == "one"
+      background-position: 0 0
+    @else if $num == "two"
+      background-position: 100px 0
+    @else if $num == "three"
+      background-position: 100% 100%
+
+// Icon
+//
+//
+
+$list-networks: google vk facebook twitter ok
+
+=social-networks($width, $height, $x:0)
+  @each $social in $list-networks
+    &.#{$social}
+      display: inline-block
+      text-indent: -9999px
+      width: $width
+      height: $height
+      background-position: $x  0
+    $x: $x - $width
+
+=icon-news
+  @for $i from 1 through 5
+    &.icon-news-#{$i}
+      background: url("blocks/b-content/news-icon-#{$i}.png") no-repeat
+      background-size: 100% 100%
+
+=breakpoint($point)
+  @if $point == 1024
+    @media (max-width: #{1024px})
+      @content
+  @else if $point == 480
+    @media (max-width: #{480px})
+      @content
+  @else if $point == 768
+    @media (max-width: #{768px})
+      @content
+  @else if $point == 960
+    @media (min-width: #{960px})
+      @content
+  @else if $point == 1000
+    @media (max-width: #{1000px})
+      @content
+
+%position
+  position: absolute
+  left: 0
+  top: 0
+  width: 100%
+  height: 100%
+
+=header-background($path, $padding: 0)
+  padding: $padding 0
+  background: url(blocks/b-header/header-island-#{$path}.png) no-repeat
+  background-size: 100% auto
+
+  +breakpoint(768)
+    background-image: url(blocks/b-header/header-island-#{$path}--medium.png)
+
+  +breakpoint(480)
+    background-image: url(blocks/b-header/header-island-#{$path}--small.png)
+
+
+
+
+
+

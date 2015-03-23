@@ -1,0 +1,46 @@
+//
+// Inputs
+// --------------------------------------------------
+
+[type="text"],
+[type="password"],
+[type="search"]
+  font-size: 1.6rem
+  color: $input-color
+  border: 1px #697365 solid
+  width: 100%
+  border-radius: $border-radius
+  padding: 12px 16px
+  background: #9aa699
+  margin-bottom: 14px
+  -webkit-appearance: none
+  @include transition(all 0.25s ease-out 0s)
+  @include input-placeholder
+    color: $base-text
+
+  &:focus
+    border-color: $light-blue
+
+  &.error
+    border-color: $error-color
+    color: $error-color
+
+    &:focus
+      border-color: $error-color
+
+textarea
+  background: white
+  font-size: 1.6rem
+  color: $base-text
+  border: 1px #C4C4C4 solid
+  width: 100%
+  border-radius: 6px
+  padding: 10px 20px 11px
+  margin-bottom: 14px
+  -webkit-appearance: none
+  +transition(all 0.25s linear 0s)
+
+  &:focus
+    border-color: #3ACEFF
+
+
